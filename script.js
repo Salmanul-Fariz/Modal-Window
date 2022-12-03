@@ -14,7 +14,6 @@ for (let i = 0; i < buttonOpenModal.length; i++) {
 }
 
 // Close Modal while click close button or outer of modal
-
 function closeModal() {
   modal.classList.add("hidden");
   overlay.classList.add("hidden");
@@ -22,3 +21,10 @@ function closeModal() {
 
 buttonCloseModal.addEventListener("click", closeModal);
 overlay.addEventListener("click", closeModal);
+
+// Close Modal When We use escap Key
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    if (!modal.classList.contains("hidden")) closeModal();
+  }
+});
